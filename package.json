@@ -16,6 +16,10 @@
     "_server:build": "tsc -p ./server",
     "postinstall": "npm run build"
   },
+  "engines": {
+    "node": "4.1.1",
+    "npm": "2.1.x"
+    }
   "author": "Vlado Tešanović",
   "repository": {
     "url": "https://github.com/vladotesanovic/angular2-express-starter"
