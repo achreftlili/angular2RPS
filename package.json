@@ -19,7 +19,7 @@
   "engines": {
     "node": "4.1.1",
     "npm": "2.1.x"
-    }
+  },
   "author": "Vlado Tešanović",
   "repository": {
     "url": "https://github.com/vladotesanovic/angular2-express-starter"
