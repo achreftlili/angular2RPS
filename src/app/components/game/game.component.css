@@ -1,8 +1,10 @@
-.main-div{
-  position:absolute;
-  background-color:#19b7aa;
-  width: 100%;
-  height: 100%;
+.centred-score{
+  text-align: center;
+  font-size: 229px;
+  background-color: #FFFFFF;
+}
+.centred-text{
+  text-align: center;
 }
 .left-counter {
   display: inline-block;
@@ -26,7 +28,15 @@
   background-color: #f9b834;
   text-align: center;
 }
-
+.title{
+  font-size: 45px;
+}
+.red{
+  background-color: red!important;
+}
+.orange{
+  background-color: orange!important;
+}
 .button {
   background-color: #047d8F;
   color: #fff;
@@ -36,7 +46,6 @@
   cursor: pointer;
   width: 360px;
   border: none;
-  margin-left: 40%;
 }
 .reset-button {
   background-color: #047d8F;
@@ -59,8 +68,4 @@
   width: 100px;
   height: 100px;
   background-color: white;
-}
-.message-class{
-  margin-top: 70px;
-  position: absolute;
 }

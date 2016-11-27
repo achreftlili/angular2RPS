@@ -5,7 +5,6 @@ import { NgRedux, select } from 'ng2-redux';
 import { rootReducer, enhancers } from '../../store/index';
 import { GameActions } from '../../actions/game.actions';
 import { IAppState } from '../../store';
-
 @Component({
   selector: 'game',
   templateUrl: 'game.component.html' ,
@@ -14,7 +13,7 @@ import { IAppState } from '../../store';
 })
 export class GameComponent {
   gameResult:String = '';
-  MachineVSMachine:Boolean = true;
+  machinevsmachine:Boolean = true;
   @select('game') game$: Observable<Object>;
   private randomizeResults = new Array();
 
@@ -23,7 +22,7 @@ export class GameComponent {
   startGame(playerOne, playerTwo) {
     this.gameResult="";
     this.randomizeResults = new Array();
-    if(this.MachineVSMachine){
+    if(this.machinevsmachine){
       playerOne.startRondomize();
     }
 		playerTwo.startRondomize();
@@ -34,7 +33,7 @@ export class GameComponent {
 	}
 
   toggleGameType() {
-		this.MachineVSMachine = !this.MachineVSMachine;
+		this.machinevsmachine = !this.machinevsmachine;
 	}
 
   choiceSelected(playerResult) {
@@ -52,10 +51,10 @@ export class GameComponent {
 			|| ((this.randomizeResults[0].value == "scissors") && (this.randomizeResults[1].value == "paper"))
 			|| ((this.randomizeResults[0].value == "paper") && (this.randomizeResults[1].value == "rock"))) {
       this.incrementPlayer(this.randomizeResults[0].player);
-      return this.randomizeResults[0].player + " wins !!!";
+      return "player " +this.randomizeResults[0].player + " wins !!!";
 		}
       this.incrementPlayer(this.randomizeResults[1].player);
-		return this.randomizeResults[1].player + " wins !!!";
+		return "player " +this.randomizeResults[1].player + " wins !!!";
 	}
 
   private incrementPlayer(number) {
@@ -68,7 +67,7 @@ export class GameComponent {
 
 	private resetGame(playerOne,playerTwo) {
     this.gameResult="";
-    this.MachineVSMachine=true;
+    this.machinevsmachine=true;
     this.randomizeResults = new Array();
     this.gameActions.resetGame();
     playerOne.init();
